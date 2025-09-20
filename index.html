@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flutter & Dart Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Portfolio showcasing Flutter & Dart projects and skills" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#">Your Name</a>
+        <nav class="nav">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button id="themeToggle" class="btn theme-toggle" aria-label="Toggle theme">🌙</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-inner">
+          <div class="hero-text">
+            <h1>Hi — I'm Your Name</h1>
+            <p>Flutter & Dart developer building beautiful, high-performance mobile apps.</p>
+            <div class="hero-cta">
+              <a class="btn primary" href="#projects">See Projects</a>
+              <a class="btn outline" href="#contact">Get In Touch</a>
+            </div>
+          </div>
+          <div class="hero-card">
+            <div class="device-mock">
+              <div class="screen">Flutter apps • Dart • UI</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container about" id="about">
+        <h2>About Me</h2>
+        <p>I build cross-platform mobile apps using Flutter and Dart. I focus on clean architecture, performant UI, and well-tested code. I enjoy solving UX problems and shipping delightful experiences.</p>
+      </section>
+
+      <section class="container skills" id="skills">
+        <h2>Skills</h2>
+        <div class="skill-list">
+          <div class="skill">Flutter</div>
+          <div class="skill">Dart</div>
+          <div class="skill">State Management (Riverpod, Provider)</div>
+          <div class="skill">Firebase</div>
+          <div class="skill">REST & GraphQL</div>
+          <div class="skill">CI/CD & Testing</div>
+        </div>
+      </section>
+
+      <section class="container projects" id="projects">
+        <h2>Selected Projects</h2>
+        <div class="projects-grid">
+          <article class="project-card" data-project-id="1">
+            <div class="project-thumb">App 1</div>
+            <h3>Todoist Clone</h3>
+            <p>Cross-platform todo app with local persistence and animations.</p>
+            <div class="card-actions">
+              <button class="btn small" data-open="1">Details</button>
+              <a class="link" href="#">Live</a>
+            </div>
+          </article>
+
+          <article class="project-card" data-project-id="2">
+            <div class="project-thumb">App 2</div>
+            <h3>Fitness Tracker</h3>
+            <p>Workout logging, charts, and background tracking.</p>
+            <div class="card-actions">
+              <button class="btn small" data-open="2">Details</button>
+              <a class="link" href="#">Repo</a>
+            </div>
+          </article>
+
+          <article class="project-card" data-project-id="3">
+            <div class="project-thumb">App 3</div>
+            <h3>Chat App</h3>
+            <p>Realtime messaging built with Firebase and custom UI components.</p>
+            <div class="card-actions">
+              <button class="btn small" data-open="3">Details</button>
+              <a class="link" href="#">Case Study</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="container contact" id="contact">
+        <h2>Contact</h2>
+        <p>I'm open for freelance and full-time opportunities. Let's build something great.</p>
+        <a class="btn primary" href="mailto:you@example.com">Email Me</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> Your Name — Flutter & Dart</div>
+        <div class="socials">
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+
+    <div id="modal" class="modal" aria-hidden="true">
+      <div class="modal-panel">
+        <button id="modalClose" class="modal-close" aria-label="Close">✕</button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
