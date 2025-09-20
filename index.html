@@ -7,20 +7,20 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta name="description" content="Portfolio showcasing Flutter & Dart projects and skills" />
   </head>
   <body>
     <header class="site-header">
       <div class="container header-inner">
-  <a class="brand" href="#">Mohammed Alhabsi</a>
+  <a class="brand" href="#"><img src="assets/personal_image.jpg" alt="Mohammed Alhabsi"/>Mohammed Alhabsi</a>
         <nav class="nav">
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
         </nav>
-        <button id="themeToggle" class="btn theme-toggle" aria-label="Toggle theme">🌙</button>
       </div>
     </header>
 
@@ -29,23 +29,19 @@
         <div class="container hero-inner">
           <div class="hero-text">
             <h1>Hi — I'm Mohammed Alhabsi</h1>
-            <p>Flutter & Dart developer building beautiful, high-performance mobile apps.</p>
+            <p>Flutter & Dart developer who loves building mobile apps.</p>
             <div class="hero-cta">
               <a class="btn primary" href="#projects">See Projects</a>
               <a class="btn outline" href="#contact">Get In Touch</a>
             </div>
           </div>
-          <div class="hero-card">
-            <div class="device-mock">
-              <img src="assets/personal_image.jpg" alt="Mohammed Alhabsi" style="width:100%;height:100%;object-fit:cover;border-radius:20px;" />
-            </div>
-          </div>
+          
         </div>
       </section>
 
       <section class="container about" id="about">
         <h2>About Me</h2>
-        <p>I build cross-platform mobile apps using Flutter and Dart. I focus on clean architecture, performant UI, and well-tested code. I enjoy solving UX problems and shipping delightful experiences.</p>
+        <p>I build cross-platform mobile apps using Flutter and Dart. I try to do my best in clean architecture, performant UI, and well-tested code. I enjoy solving problems and shipping delightful experiences.</p>
       </section>
 
       <section class="container skills" id="skills">
@@ -53,10 +49,11 @@
         <div class="skill-list">
           <div class="skill">Flutter</div>
           <div class="skill">Dart</div>
-          <div class="skill">State Management (Riverpod, Provider)</div>
+          <div class="skill">State Management (Provider)</div>
           <div class="skill">Firebase</div>
-          <div class="skill">REST & GraphQL</div>
-          <div class="skill">CI/CD & Testing</div>
+          <div class="skill">SQL</div>
+          <div class="skill">HTML & CSS</div>
+          
         </div>
       </section>
 
@@ -79,7 +76,7 @@
             <p>Workout logging, charts, and background tracking.</p>
             <div class="card-actions">
               <button class="btn small" data-open="2">Details</button>
-              <a class="link" href="#">Repo</a>
+              <a class="link" href="#">Live</a>
             </div>
           </article>
 
@@ -89,28 +86,33 @@
             <p>Realtime messaging built with Firebase and custom UI components.</p>
             <div class="card-actions">
               <button class="btn small" data-open="3">Details</button>
-              <a class="link" href="#">Case Study</a>
+              <a class="link" href="#">Live</a>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="container contact" id="contact">
-        <h2>Contact</h2>
-        <p>I'm open for freelance and full-time opportunities. Let's build something great.</p>
-        <a class="btn primary" href="mailto:you@example.com">Email Me</a>
-      </section>
+      
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <div>© <span id="year"></span> Your Name — Flutter & Dart</div>
-        <div class="socials">
-          <a href="#">GitHub</a>
-          <a href="#">LinkedIn</a>
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p>I'm always open to discussing new projects and opportunities.</p>
+            <div class="contact-links">
+                <a href="mailto:atarashimerai@gmail.com" aria-label="Email">
+                    <i class="fas fa-envelope contact-icon"></i>
+                </a>
+                <a href="https://github.com/devloVinci/" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github contact-icon"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/mohammed-al-habsi-9392872ab/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in contact-icon"></i>
+                </a>
+                </a>
+            </div>
         </div>
-      </div>
-    </footer>
+    </section>
 
     <div id="modal" class="modal" aria-hidden="true">
       <div class="modal-panel">

@@ -18,7 +18,7 @@ git init
 git add .
 git commit -m "Initial portfolio site"
 git branch -M main
-git remote add origin https://github.com/<your-username>/<your-repo>.git
+git remote add origin https://github.com/devloVinci/my_portfolio.git
 git push -u origin main
 ```
 
@@ -27,6 +27,6 @@ git push -u origin main
 3. After the action completes, enable Pages in your repository settings (if needed) and set the source to the `gh-pages` branch.
 
 Notes:
-- Replace `<your-username>/<your-repo>` with your GitHub repo path.
+- Replace `<devloVinci>/<my_portfolio>` with your GitHub repo path.
 - Alternatively, you can deploy manually by enabling GitHub Pages from the repository settings.
 

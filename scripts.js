@@ -1,22 +1,5 @@
-// Theme toggle
-const themeToggle = document.getElementById('themeToggle');
-const root = document.documentElement;
 const yearEl = document.getElementById('year');
 if(yearEl) yearEl.textContent = new Date().getFullYear();
-
-function setTheme(dark){
-  if(dark){
-    root.style.setProperty('--bg','#071021');
-  } else {
-    root.style.setProperty('--bg','#f6f9fc');
-  }
-}
-
-themeToggle && themeToggle.addEventListener('click', ()=>{
-  const isDark = root.style.getPropertyValue('--bg') !== '#f6f9fc';
-  setTheme(!isDark ? true : false);
-  themeToggle.textContent = isDark ? '🌙' : '☀️';
-});
 
 // Modal for project details
 const modal = document.getElementById('modal');
