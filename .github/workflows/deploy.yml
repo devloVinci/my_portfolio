@@ -13,7 +13,18 @@ jobs:
       id-token: write
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Show repo files (debug)
+        run: |
+          echo "Listing root files"
+          ls -la
+          echo "Git status"
+          git status --porcelain
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -25,3 +36,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
+          publish_branch: gh-pages
