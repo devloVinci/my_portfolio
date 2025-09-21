@@ -1,0 +1,17 @@
+{
+  "projects": [
+    {
+      "id": "battery_notifier",
+      "title": "Battery Notifier",
+      "description": "A Flutter app that monitors battery level and notifies when threshold is reached. Features fullscreen alarm, persistent background monitoring, and polished UI.",
+      "screenshots": [
+        "assets/apps_screenshots/battery_notifier/batteryfullscreen_alarm.png",
+        "assets/apps_screenshots/battery_notifier/batteryscreen1.png",
+        "assets/apps_screenshots/battery_notifier/batteryscreen2.png"
+      ],
+      "live_url": "projects.html?project=battery_notifier",
+      "repo_url": "https://github.com/devloVinci/battery_notifier",
+      "tech": ["Flutter","Dart","Local Notifications","Background Service"]
+    }
+  ]
+}
