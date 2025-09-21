@@ -3,7 +3,7 @@
     {
       "id": "battery_notifier",
       "title": "Battery Notifier",
-      "description": "Battery Notifier is a lightweight Flutter application that reminds you to charge or unplug your device based on configurable battery thresholds.Purpose: 1.Notify the user to charge when the battery falls below a configured minimum and the device is not charging. 2. Notify the user to unplug when the battery rises above a configured maximum and the device is still plugged in..",
+      "description": "Battery Notifier is a lightweight Flutter application that reminds you to charge or unplug your device based on configurable battery thresholds.\n\nPurpose:\n1. Notify the user to charge when the battery falls below a configured minimum and the device is not charging.\n2. Notify the user to unplug when the battery rises above a configured maximum and the device is still plugged in.",
       "screenshots": [
         "assets/apps_screenshots/battery_notifier/batteryfullscreen_alarm.png",
         "assets/apps_screenshots/battery_notifier/batteryscreen1.png",
@@ -11,7 +11,7 @@
       ],
       "live_url": "projects.html?project=battery_notifier",
       "repo_url": "https://github.com/devloVinci/battery_notifier",
-      "tech": ["Flutter","Dart","Local Notifications","Background Service", "Windows", "PowerShell"]
+      "tech": ["Flutter", "Dart", "Local Notifications", "Mini Service", "Windows", "PowerShell"]
     }
   ]
 }
