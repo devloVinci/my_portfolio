@@ -4,17 +4,467 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Flutter & Dart Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta name="description" content="Portfolio showcasing Flutter & Dart projects and skills" />
+    <style>
+      /* Base styles */
+      :root {
+        --primary: #2c3e50;
+        --secondary: #3498db;
+        --accent: #2980b9;
+        --light: #f5f7fa;
+        --dark: #2c3e50;
+        --gradient: linear-gradient(to right, #2c3e50, #3498db);
+        --gradient-reverse: linear-gradient(to right, #3498db, #2c3e50);
+      }
+      
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+      }
+      
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      
+      /* Header */
+      .site-header {
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(10px);
+      }
+      
+      .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+      }
+      
+      .brand {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        font-size: 1.4rem;
+        color: var(--primary);
+        text-decoration: none;
+        gap: 10px;
+      }
+      
+      .brand img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      
+      .nav {
+        display: flex;
+        gap: 25px;
+      }
+      
+      .nav a {
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+        position: relative;
+      }
+      
+      .nav a:hover {
+        color: var(--secondary);
+      }
+      
+      .nav a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gradient);
+        transition: width 0.3s;
+      }
+      
+      .nav a:hover::after {
+        width: 100%;
+      }
+      
+      /* Hero Section */
+      .hero {
+        padding: 100px 0;
+        text-align: center;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f8f9fa"/><path d="M0 50 L100 50 M50 0 L50 100" stroke="%23e9ecef" stroke-width="2"/></svg>');
+        background-size: 30px 30px;
+      }
+      
+      .hero-inner {
+        max-width: 800px;
+      }
+      
+      .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        color: var(--primary);
+        line-height: 1.2;
+      }
+      
+      .hero p {
+        font-size: 1.4rem;
+        color: #555;
+        margin-bottom: 40px;
+      }
+      
+      .hero-cta {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      
+      /* Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 25px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s;
+        cursor: pointer;
+        border: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      
+      .btn.primary {
+        background: var(--gradient);
+        color: white;
+      }
+      
+      .btn.outline {
+        background: transparent;
+        color: var(--primary);
+        border: 2px solid var(--primary);
+      }
+      
+      .btn.small {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+      
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+      
+      .btn.primary:hover {
+        background: var(--gradient-reverse);
+      }
+      
+      .btn.outline:hover {
+        background: var(--primary);
+        color: white;
+      }
+      
+      /* Sections */
+      section {
+        padding: 80px 0;
+      }
+      
+      section .container {
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+      
+      h2 {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 30px;
+        text-align: center;
+        position: relative;
+        padding-bottom: 15px;
+      }
+      
+      h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--gradient);
+        border-radius: 2px;
+      }
+      
+      /* About Section */
+      .about p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        text-align: center;
+        color: #555;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      /* Skills Section */
+      .skill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 30px;
+      }
+      
+      .skill {
+        background: var(--gradient);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-weight: 500;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+      
+      .skill:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+      
+      /* Projects Section */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+      
+      .project-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+      
+      .project-thumb {
+        height: 180px;
+        background: var(--gradient);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+      
+      .project-card h3 {
+        font-size: 1.4rem;
+        color: var(--primary);
+        margin: 20px 20px 10px;
+      }
+      
+      .project-card p {
+        color: #555;
+        margin: 0 20px 20px;
+        flex-grow: 1;
+      }
+      
+      .card-actions {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px 20px;
+        gap: 10px;
+      }
+      
+      .link {
+        color: var(--secondary);
+        text-decoration: none;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      
+      .link:hover {
+        text-decoration: underline;
+      }
+      
+      /* Contact Section */
+      #contact {
+        text-align: center;
+        background: var(--dark);
+        color: white;
+      }
+      
+      #contact .container {
+        background: transparent;
+        box-shadow: none;
+      }
+      
+      #contact h2 {
+        color: white;
+      }
+      
+      #contact h2::after {
+        background: var(--secondary);
+      }
+      
+      #contact p {
+        margin-bottom: 40px;
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .contact-links {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap;
+      }
+      
+      .contact-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 1.5rem;
+        transition: all 0.3s;
+        text-decoration: none;
+      }
+      
+      .contact-links a:hover {
+        background: var(--secondary);
+        transform: translateY(-5px);
+      }
+      
+      /* Modal */
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+      }
+      
+      .modal[aria-hidden="false"] {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      
+      .modal-panel {
+        background: white;
+        border-radius: 10px;
+        padding: 30px;
+        max-width: 600px;
+        width: 90%;
+        position: relative;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+      
+      .modal-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #777;
+        transition: color 0.3s;
+      }
+      
+      .modal-close:hover {
+        color: var(--secondary);
+      }
+      
+      /* Responsive */
+      @media (max-width: 768px) {
+        .header-inner {
+          flex-direction: column;
+          gap: 15px;
+        }
+        
+        .nav {
+          gap: 15px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+        
+        .hero p {
+          font-size: 1.2rem;
+        }
+        
+        .hero-cta {
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+        
+        section {
+          padding: 60px 0;
+        }
+        
+        section .container {
+          padding: 30px 20px;
+        }
+      }
+    </style>
   </head>
   <body>
     <header class="site-header">
       <div class="container header-inner">
-  <a class="brand" href="#"><img src="assets/personal_image.jpg" alt="Mohammed Alhabsi"/>Mohammed Alhabsi</a>
+        <a class="brand" href="#"><img src="assets/personal_image.jpg" alt="Mohammed Alhabsi"/>Mohammed Alhabsi</a>
         <nav class="nav">
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
@@ -35,7 +485,6 @@
               <a class="btn outline" href="#contact">Get In Touch</a>
             </div>
           </div>
-          
         </div>
       </section>
 
@@ -53,7 +502,6 @@
           <div class="skill">Firebase</div>
           <div class="skill">SQL</div>
           <div class="skill">HTML & CSS</div>
-          
         </div>
       </section>
 
@@ -62,8 +510,8 @@
         <div class="projects-grid">
           <article class="project-card" data-project-id="1">
             <div class="project-thumb">App 1</div>
-            <h3>Todoist Clone</h3>
-            <p>Cross-platform todo app with local persistence and animations.</p>
+            <h3>Battery Notifier</h3>
+            <p>Monitor battery levels and receive alerts.</p>
             <div class="card-actions">
               <button class="btn small" data-open="1">Details</button>
               <a class="link" href="projects.html?project=battery_notifier">Live</a>
@@ -91,8 +539,6 @@
           </article>
         </div>
       </section>
-
-      
     </main>
 
     <section id="contact">
@@ -101,14 +547,13 @@
             <p>I'm always open to discussing new projects and opportunities.</p>
             <div class="contact-links">
                 <a href="mailto:atarashimerai@gmail.com" aria-label="Email">
-                    <i class="fas fa-envelope contact-icon"></i>
+                    <i class="fas fa-envelope"></i>
                 </a>
                 <a href="https://github.com/devloVinci/" target="_blank" aria-label="GitHub">
-                    <i class="fab fa-github contact-icon"></i>
+                    <i class="fab fa-github"></i>
                 </a>
                 <a href="https://www.linkedin.com/in/mohammed-al-habsi-9392872ab/" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in contact-icon"></i>
-                </a>
+                    <i class="fab fa-linkedin-in"></i>
                 </a>
             </div>
         </div>
@@ -121,6 +566,54 @@
       </div>
     </div>
 
-    <script src="scripts.js"></script>
+    <script>
+      // Simple modal functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('modal');
+        const modalClose = document.getElementById('modalClose');
+        const modalContent = document.getElementById('modalContent');
+        
+        // Open modal when clicking on project details
+        document.querySelectorAll('[data-open]').forEach(button => {
+          button.addEventListener('click', function() {
+            const projectId = this.getAttribute('data-open');
+            modalContent.innerHTML = `<h3>Project ${projectId} Details</h3><p>More information about this project would appear here.</p>`;
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+          });
+        });
+        
+        // Close modal
+        modalClose.addEventListener('click', function() {
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        });
+        
+        // Close modal when clicking outside
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) {
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+          }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+              });
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
