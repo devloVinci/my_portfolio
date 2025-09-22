@@ -1,6 +1,5 @@
 async function loadProjects(){
     try {
-       
         const res = await fetch('assets/data/projects.json');
         const data = await res.json();
         const container = document.getElementById('projectsList');
@@ -13,6 +12,13 @@ async function loadProjects(){
                 container.innerHTML = '<div class="error"><p>Project not found.</p></div>'; 
                 return; 
             }
+
+            // Check if repo_url exists and is not empty
+            const githubButton = p.repo_url && p.repo_url.trim() !== '' 
+                ? `<a class="btn" href="${p.repo_url}" target="_blank">
+                      <i class="fab fa-github"></i> View on GitHub
+                   </a>`
+                : '';
 
             // Render project detail WITH lightbox functionality
             container.innerHTML = `
@@ -32,13 +38,12 @@ async function loadProjects(){
                         <div class="project-tech">
                             ${p.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
                         </div>
-                        if(p.repo_url) {
                         <div class="project-actions">
-                            <a class="btn" href="${p.repo_url}" target="_blank">
-                                <i class="fab fa-github"></i> View on GitHub
+                            ${githubButton}
+                            <a class="btn outline" href="projects.html">
+                                <i class="fas fa-arrow-left"></i> Back to Projects
                             </a>
                         </div>
-                        }
                     </div>
                 </div>
                 <div id="lightbox" class="lightbox" aria-hidden="true">
@@ -58,27 +63,26 @@ async function loadProjects(){
                 img.addEventListener('click', e => {
                     lbImg.src = e.target.src;
                     lb.setAttribute('aria-hidden', 'false');
-                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                    document.body.style.overflow = 'hidden';
                 });
             });
             
             lbClose.addEventListener('click', () => {
                 lb.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = ''; // Re-enable scrolling
+                document.body.style.overflow = '';
             });
             
             lb.addEventListener('click', e => {
                 if(e.target === lb) {
                     lb.setAttribute('aria-hidden', 'true');
-                    document.body.style.overflow = ''; // Re-enable scrolling
+                    document.body.style.overflow = '';
                 }
             });
             
-            // Close lightbox with Escape key
             document.addEventListener('keydown', e => {
                 if(e.key === 'Escape' && lb.getAttribute('aria-hidden') === 'false') {
                     lb.setAttribute('aria-hidden', 'true');
-                    document.body.style.overflow = ''; // Re-enable scrolling
+                    document.body.style.overflow = '';
                 }
             });
 

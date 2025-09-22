@@ -16,9 +16,9 @@
     {
       "id": "glove_remote_controller",
       "title": "Glove Remote Controller",
-      "description": "Glove Remote Controller is a Flutter application that allows users to control their devices using a smart glove. The app communicates with the glove via Bluetooth and provides a user-friendly interface for configuring and managing glove settings.",
+      "description": "I created this app for an engineering student's advanced diploma project. They wanted to create an app that would control the glove they made with Arduino via Bluetooth, so I created this for them. The app is old and isn't available on GitHub.",
       "screenshots": [
-        "assets/apps_screenshots/glove_remote/glove_remote1.png"
+        "assets/apps_screenshots/glove_remote/glove_remote1.jpg"
       ],
       "live_url": "projects.html?project=glove_remote_controller",
       "repo_url": "",
