@@ -32,11 +32,13 @@ async function loadProjects(){
                         <div class="project-tech">
                             ${p.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
                         </div>
+                        if(p.repo_url) {
                         <div class="project-actions">
                             <a class="btn" href="${p.repo_url}" target="_blank">
                                 <i class="fab fa-github"></i> View on GitHub
                             </a>
                         </div>
+                        }
                     </div>
                 </div>
                 <div id="lightbox" class="lightbox" aria-hidden="true">
