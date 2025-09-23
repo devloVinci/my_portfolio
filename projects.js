@@ -20,6 +20,13 @@ async function loadProjects(){
                    </a>`
                 : '';
 
+            // Check if download_url exists and is not empty
+            const downloadButton = p.download_url && p.download_url.trim() !== '' 
+                ? `<a class="btn outline" href="${p.download_url}" target="_blank">
+                      <i class="fas fa-download"></i> Download
+                   </a>`
+                : '';
+
             // Render project detail WITH lightbox functionality
             container.innerHTML = `
                 <div class="project-detail">
@@ -40,6 +47,7 @@ async function loadProjects(){
                         </div>
                         <div class="project-actions">
                             ${githubButton}
+                            ${downloadButton}
                             <a class="btn outline" href="projects.html">
                                 <i class="fas fa-arrow-left"></i> Back to Projects
                             </a>

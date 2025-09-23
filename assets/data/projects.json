@@ -9,6 +9,7 @@
         "assets/apps_screenshots/battery_notifier/batteryscreen1.png",
         "assets/apps_screenshots/battery_notifier/batteryscreen2.png"
       ],
+      "download_url": "https://drive.google.com/file/d/1wAW4Waw5bs14kLJlrjsD-lhV3_xZkXaG/view?usp=sharing",
       "live_url": "projects.html?project=battery_notifier",
       "repo_url": "https://github.com/devloVinci/battery_notifier",
       "tech": ["Flutter", "Dart", "Local Notifications", "Mini Service", "Windows", "PowerShell"]
@@ -37,8 +38,8 @@
     },
     {
       "id": "addiction_tracker_app",
-      "title": "Addiction Tracker App",
-      "description": "An app to help users track and manage their addictions, this my best project I did, it was a great learning experience, I have published it on Play Store before but now I have removed it from there, it has a lot of features like tracking, statistics, authentication, visitor mode which you can give your account to your friends.",
+      "title": "Addiction Tracker App (free bird)",
+      "description": "An app to help users track and manage their addictions, this my best project I did, it was a great learning experience, I have published it on Play Store before but now I have removed it from there, it has a lot of features like tracking, statistics, authentication, visitor mode which you can give your account to your friends. Note : I give you the apk file but please consider that this from my old work from 2022/2023, it may have so many bugs, and I am not maintaining it now.",
       "screenshots": [
         "assets/apps_screenshots/addiction_tracker_app/no_fap_app1.png",
         "assets/apps_screenshots/addiction_tracker_app/no_fap_app2.png",
@@ -46,7 +47,7 @@
       ],
       "live_url": "projects.html?project=addiction_tracker_app",
       "repo_url": "",
-      "tech": ["Flutter", "Dart", "Firebase", "Real-time Database", "Published on Play Store (before)"]
+      "tech": ["Flutter", "Dart", "Firebase", "Firebase Database", "Firebase Storage", "authentication", "Published on Play Store (before)"]
     }
 
   ]
