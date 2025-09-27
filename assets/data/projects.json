@@ -33,7 +33,7 @@
         "assets/apps_screenshots/chat_app_clone/chat_clone_Screenshot.png"
       ],
       "live_url": "projects.html?project=chat_app_clone",
-      "repo_url": "",
+      "repo_url": "https://github.com/devloVinci/flutter_chatapp",
       "tech": ["Flutter", "Dart", "Firebase", "Real-time Database"]
     },
     {
