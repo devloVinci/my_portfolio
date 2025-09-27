@@ -47,6 +47,7 @@
       ],
       "live_url": "projects.html?project=addiction_tracker_app",
       "repo_url": "",
+      "download_url": "https://drive.google.com/file/d/1f96sPuSEreXz3vRIYrx4fjIm5pbB5U_2/view?usp=sharing",
       "tech": ["Flutter", "Dart", "Firebase", "Firebase Database", "Firebase Storage", "authentication", "Published on Play Store (before)"]
     }
 
