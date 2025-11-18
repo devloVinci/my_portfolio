@@ -1,0 +1,55 @@
+{
+  "projects": [
+    {
+      "id": "battery_notifier",
+      "title": "Battery Notifier",
+      "description": "Battery Notifier is a lightweight Flutter application that reminds you to charge or unplug your device based on configurable battery thresholds.\n\nPurpose:\n1. Notify the user to charge when the battery falls below a configured minimum and the device is not charging.\n2. Notify the user to unplug when the battery rises above a configured maximum and the device is still plugged in.",
+      "screenshots": [
+        "assets/apps_screenshots/battery_notifier/batteryfullscreen_alarm.png",
+        "assets/apps_screenshots/battery_notifier/batteryscreen1.png",
+        "assets/apps_screenshots/battery_notifier/batteryscreen2.png"
+      ],
+      "download_url": "https://drive.google.com/file/d/1wAW4Waw5bs14kLJlrjsD-lhV3_xZkXaG/view?usp=sharing",
+      "live_url": "projects.html?project=battery_notifier",
+      "repo_url": "https://github.com/devloVinci/battery_notifier",
+      "tech": ["Flutter", "Dart", "Local Notifications", "Mini Service", "Windows", "PowerShell"]
+    },
+    {
+      "id": "glove_remote_controller",
+      "title": "Glove Remote Controller",
+      "description": "I created this app for an engineering student's advanced diploma project. They wanted to create an app that would control the glove they made with Arduino via Bluetooth, so I created this for them. The app is old and isn't available on GitHub.",
+      "screenshots": [
+        "assets/apps_screenshots/glove_remote/glove_remote1.jpg"
+      ],
+      "live_url": "projects.html?project=glove_remote_controller",
+      "repo_url": "",
+      "tech": ["Flutter", "Dart", "Bluetooth", "Device Control"]
+    },
+      {
+      "id": "chat_app_clone",
+      "title": "Chat App Clone",
+      "description": "A chat application I built with Firebase.",
+      "screenshots": [
+        "assets/apps_screenshots/chat_app_clone/chat_clone_Screenshot.png"
+      ],
+      "live_url": "projects.html?project=chat_app_clone",
+      "repo_url": "https://github.com/devloVinci/flutter_chatapp",
+      "tech": ["Flutter", "Dart", "Firebase", "Real-time Database"]
+    },
+    {
+      "id": "addiction_tracker_app",
+      "title": "Addiction Tracker App (free bird)",
+      "description": "An app to help users track and manage their addictions, this my best project I did, it was a great learning experience, I have published it on Play Store before but now I have removed it from there, it has a lot of features like tracking, statistics, authentication, visitor mode which you can give your account to your friends. Note : I give you the apk file but please consider that this from my old work from 2022/2023, it may have so many bugs, and I am not maintaining it now.",
+      "screenshots": [
+        "assets/apps_screenshots/addiction_tracker_app/no_fap_app1.png",
+        "assets/apps_screenshots/addiction_tracker_app/no_fap_app2.png",
+        "assets/apps_screenshots/addiction_tracker_app/no_fap_app3.png"
+      ],
+      "live_url": "projects.html?project=addiction_tracker_app",
+      "repo_url": "",
+      "download_url": "https://drive.google.com/file/d/1f96sPuSEreXz3vRIYrx4fjIm5pbB5U_2/view?usp=sharing",
+      "tech": ["Flutter", "Dart", "Firebase", "Firebase Database", "Firebase Storage", "authentication", "Published on Play Store (before)"]
+    }
+
+  ]
+}
