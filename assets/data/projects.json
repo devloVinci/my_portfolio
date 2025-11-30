@@ -49,6 +49,20 @@
       "repo_url": "",
       "download_url": "https://drive.google.com/file/d/1f96sPuSEreXz3vRIYrx4fjIm5pbB5U_2/view?usp=sharing",
       "tech": ["Flutter", "Dart", "Firebase", "Firebase Database", "Firebase Storage", "authentication", "Published on Play Store (before)"]
+    },
+      {
+      "id": "zoom_clone_app",
+      "title": "Zoom Clone App",
+      "description": "A Zoom clone app I built with Flutter and Firebase. It has features like video conferencing, chat, and screen sharing.",
+      "screenshots": [
+        "assets/zoom_clone_app/zoom_clone1.jpg",
+        "assets/zoom_clone_app/zoom_clone2.jpg",
+        "assets/zoom_clone_app/zoom_clone3.jpg"
+      ],
+      "live_url": "projects.html?project=zoom_clone_app",
+      "repo_url": "",
+      "download_url": "https://drive.google.com/file/d/1xAxQGyH2QvrBqcwUbnnYarBncMVGhv0y/view?usp=drive_link",
+      "tech": ["Flutter", "Dart", "Firebase", "Firebase Database", "Firebase Storage", "authentication", "Clean Architecture (MVVM)", "State Management (Bloc)"]
     }
 
   ]
