@@ -502,6 +502,7 @@
         <div class="skill">Flutter</div>
         <div class="skill">Dart</div>
         <div class="skill">State Management (Provider)</div>
+        <div class="skill">State Management (Bloc)</div>
         <div class="skill">Firebase</div>
         <div class="skill">SQL</div>
         <div class="skill">HTML & CSS</div>
@@ -510,42 +511,8 @@
 
     <section class="container projects" id="projects">
       <h2>Selected Projects</h2>
-      <div class="projects-grid">
-          <article class="project-card" data-project-id="1">
-          <div class="project-thumb">App 1</div>
-          <h3>App for addiction - no fap (free bird)</h3>
-          <p>track the addiction behavior with firebase, and you can add your friend to recovery journey (available download link).</p>
-          <div class="card-actions">
-            <a class="link" href="projects.html?project=addiction_tracker_app">Live</a>
-          </div>
-        </article>
-
-        <article class="project-card" data-project-id="2">
-          <div class="project-thumb">App 2</div>
-          <h3>Battery Notifier</h3>
-          <p>Monitor battery levels and receive alerts (available download link).</p>
-          <div class="card-actions">
-            <a class="link" href="projects.html?project=battery_notifier">Live</a>
-          </div>
-        </article>
-
-        <article class="project-card" data-project-id="3">
-          <div class="project-thumb">App 3</div>
-          <h3>Glove Remote Controller</h3>
-          <p>a remote app I built for Electric Engineering students in my college.</p>
-          <div class="card-actions">
-            <a class="link" href="projects.html?project=glove_remote_controller">Live</a>
-          </div>
-        </article>
-
-        <article class="project-card" data-project-id="4">
-          <div class="project-thumb">App 4</div>
-          <h3>Chat app clone</h3>
-          <p>A chat application I built with Firebase.</p>
-          <div class="card-actions">
-            <a class="link" href="projects.html?project=chat_app_clone">Live</a>
-              </div>
-        </article>
+      <div id="projectsGrid" class="projects-grid">
+        <!-- Projects will be loaded here dynamically -->
       </div>
     </section>
   </main>
@@ -576,8 +543,34 @@
   </div>
 
   <script>
+    // Load and display projects from JSON
+    async function loadIndexProjects() {
+      try {
+        const response = await fetch('assets/data/projects.json');
+        const data = await response.json();
+        const projectsGrid = document.getElementById('projectsGrid');
+        
+        projectsGrid.innerHTML = data.projects.map(project => `
+          <article class="project-card">
+            <div class="project-thumb">
+              <img src="${project.screenshots[0]}" alt="${project.title}" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3>${project.title}</h3>
+            <p>${project.description.split('\n')[0]}</p>
+            <div class="card-actions">
+              <a class="link" href="projects.html?project=${project.id}">Live</a>
+            </div>
+          </article>
+        `).join('');
+      } catch (error) {
+        console.error('Failed to load projects:', error);
+      }
+    }
+
     // Simple modal functionality
     document.addEventListener('DOMContentLoaded', function () {
+      // Load projects from JSON
+      loadIndexProjects();
       const modal = document.getElementById('modal');
       const modalClose = document.getElementById('modalClose');
       const modalContent = document.getElementById('modalContent');
